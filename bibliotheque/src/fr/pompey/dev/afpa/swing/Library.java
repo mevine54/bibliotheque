@@ -36,6 +36,7 @@ public class Library extends JFrame {
         contentPane.setBorder(new EmptyBorder(20, 5, 5, 5));
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS)); // Alignement vertical
         setContentPane(contentPane);
+        setResizable(false);
 
         // Initialiser les boutons
         addSubscriberButton = new JButton("Ajouter un abonné");
@@ -190,9 +191,11 @@ public class Library extends JFrame {
 
     private void showAddSubscriberForm() {
         JFrame formFrame = new JFrame("Ajouter un abonné");
+        setResizable(false);
         formFrame.setSize(400, 250);
         formFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         formFrame.setLocationRelativeTo(null);
+
 
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -235,6 +238,7 @@ public class Library extends JFrame {
         panel.add(submitButton, gbc);
 
         formFrame.add(panel);
+        setResizable(false);
 
         // Action à effectuer lors du clic sur le bouton "Submit"
         submitButton.addActionListener(new ActionListener() {
